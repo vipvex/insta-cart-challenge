@@ -25,15 +25,20 @@ end.parse!
 puts "Start date #{@start_date}"
 puts "End date #{@end_date}"
 
-# Change the following to reflect your database settings
 p = ActiveRecord::Base.establish_connection(
-  adapter:  'sqlite3', # or 'postgresql' or 'sqlite3' or 'oracle_enhanced'
+  adapter:  'sqlite3',
   database: 'db/applicants.sqlite3',
 )
 
 c = p.connection
 
-results = c.execute("SELECT first_name FROM applicants LIMIT 4;")
+results = c.execute("SELECT COUNT(workflow_state) AS count,
+                            DATE(applicants.created_at, 'weekday 0', '-6 days') AS week,
+                            workflow_state
+                            FROM applicants
+                            GROUP BY week, workflow_state
+                            ORDER BY week, workflow_state 
+                            LIMIT 200;")
 
 results.each do |result|
   p result
