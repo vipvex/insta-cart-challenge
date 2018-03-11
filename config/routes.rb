@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resource :applicant, except: [:index, :delete] do # , only: [:new, :create, :edit, :update, :show] do #, 
     get :background_check
+    get :confirmed
     get :confirm_background
     delete :log_out
   end

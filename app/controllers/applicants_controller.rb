@@ -29,7 +29,7 @@ class ApplicantsController < ApplicationController
     @applicant.assign_attributes(applicant_params)
     if @applicant.valid? # Use @applicant.update to persist record in database
       
-      redirect_to edit_applicant_path(@applicant)
+      redirect_to confirmed_applicant_path(@applicant)
     else
       render 'update'
     end
@@ -38,10 +38,13 @@ class ApplicantsController < ApplicationController
   def background_check
   end
   
+  def confirmed
+  end
+  
   def confirm_background
     # Use @applicant_params.update(confirmed_background_check: true) to persist in database
     session[:applicant][:confirmed_background_check] = true
-    redirect_to edit_applicant_path(@applicant)
+    redirect_to confirmed_applicant_path(@applicant)
   end
   
   def log_out
