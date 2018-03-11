@@ -2,9 +2,15 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title InstaCartChallenge
+    %title Instacart - apply
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = yield
+    .main
+      .ui.container.text
+        .ui.two.column.centered.grid
+          .ui.column
+            = image_tag 'instacart_logo.png', class: 'ui image medium centered'
+            .ui.segment
+              = yield

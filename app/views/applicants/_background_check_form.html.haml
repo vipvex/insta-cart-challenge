@@ -1,0 +1,7 @@
+= form_for @shopper_applicant, url: shopper_applicant_path, html: { class: 'ui form' } do |f|
+  .ui.field.checkbox
+    = f.check_box :confirmed_background_check
+    = f.label :confirmed_background_check, 'Confirm'
+  %br
+  = f.submit 'Apply Now!', class: 'ui button green huge fluid'
+  

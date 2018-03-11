@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Instacart - get paid to shop!
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .banner
+      .banner-overlay
+        .content
+          = image_tag 'instacart_logo.png', class: 'ui image medium centered'
+          .call-to-action
+            %h1.ui.header.white.hook Change the way people shop!
+            = link_to 'Apply Now!', new_applicant_path, class: 'ui button green massive'      
+    = yield

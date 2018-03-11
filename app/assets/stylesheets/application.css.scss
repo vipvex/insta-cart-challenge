@@ -15,3 +15,29 @@
  */
  
 @import "semantic-ui";
+
+
+body {
+  background-color: #F6F8F8;
+}
+
+.main {
+  margin-top: 3em;
+}
+
+.white {
+  color: white !important;
+}
+
+.header, .ui p {
+  margin-bottom: 1em !important;
+}
+
+.centered {
+  margin: auto !important;
+  text-align: center;
+}
+
+.error-field {
+  color: red;
+}

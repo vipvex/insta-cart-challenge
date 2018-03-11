@@ -1,0 +1,27 @@
+= form_for @applicant, url: applicant_path, html: { class: 'ui form' } do |f|
+  
+  .error
+    = flash[:error]
+    
+  .field
+    = f.label :first_name
+    = f.text_field :first_name, placeholder: 'First Name'
+    = inline_errors(@applicant.errors, :first_name)
+  .field
+    = f.label :last_name
+    = f.text_field :last_name, placeholder: 'Last Name'
+    = inline_errors(@applicant.errors, :last_name)
+  .field
+    = f.label :email
+    = f.email_field :email, placeholder: 'Email'
+    = inline_errors(@applicant.errors, :email)
+  .field
+    = f.label :phone
+    = f.text_field :phone, placeholder: 'Phone'
+    = inline_errors(@applicant.errors, :phone)
+  .field
+    = f.label :zip_code
+    = f.text_field :zip_code, placeholder: 'Zip Code'
+    = inline_errors(@applicant.errors, :zip_code)
+  .field
+    = f.submit 'Apply Now!', class: 'ui button green huge fluid'
