@@ -6,7 +6,6 @@ class Applicant < ApplicationRecord
   validates :zip_code, presence: true, length: { maximum: 20 }
   
   validates_format_of :email, with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
-  #validates_format_of :phone, with: /\d{3}-\d{3}-\d{4}/, message: "must be 10 digits"
   
   def confirmed_background_check?
     confirmed_background_check

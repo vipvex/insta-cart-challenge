@@ -179,6 +179,8 @@ GEM
     semantic-ui-sass (2.3.0.0)
       sass (>= 3.2)
     sexp_processor (4.10.1)
+    shoulda-matchers (3.1.2)
+      activesupport (>= 4.0.0)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -231,6 +233,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   selenium-webdriver
   semantic-ui-sass
+  shoulda-matchers (~> 3.1)
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
