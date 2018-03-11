@@ -22,9 +22,6 @@ OptionParser.new do |parser|
   
 end.parse!
 
-puts "Start date #{@start_date}"
-puts "End date #{@end_date}"
-
 p = ActiveRecord::Base.establish_connection(
   adapter:  'sqlite3',
   database: 'db/applicants.sqlite3',
@@ -37,9 +34,10 @@ results = c.execute("SELECT COUNT(workflow_state) AS count,
                             workflow_state
                             FROM applicants
                             GROUP BY week, workflow_state
-                            ORDER BY week, workflow_state 
-                            LIMIT 200;")
+                            ORDER BY week, workflow_state")
+
+$stdout.puts "count,week,workflow_state"
 
 results.each do |result|
-  p result
+  $stdout.puts [result['count'], result['week'], result['workflow_state']].join(',')
 end
