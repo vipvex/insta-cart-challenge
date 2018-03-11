@@ -1,4 +1,4 @@
-= form_for @applicant, url: applicant_path, html: { class: 'ui form' } do |f|
+= form_for @applicant, url: applicant_path, method: @current_applicant ? 'patch' : 'post', html: { class: 'ui form' } do |f|
   
   .error
     = flash[:error]

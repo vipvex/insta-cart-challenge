@@ -13,13 +13,14 @@
 ActiveRecord::Schema.define(version: 20180311041301) do
 
   create_table "applicants", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
-    t.string "phone"
-    t.string "zip_code"
-    t.boolean "over_18"
-    t.string "phone_type"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "email", null: false
+    t.string "phone", null: false
+    t.string "zip_code", null: false
+    t.boolean "over_18", null: false
+    t.string "phone_type", null: false
+    t.boolean "confirmed_background_check", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
