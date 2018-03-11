@@ -1,3 +1,5 @@
+Please place the applicants.sqlite3 provided with the challenge into the insta-cart-challenge/db folder
+
 Running the app
 
     bundle install
